@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+const path = require("path");
 let { env } = process;
 
 module.exports = {
@@ -20,6 +21,14 @@ module.exports = {
     overlay: {
       warnings: false,
       errors: false
+    }
+  },
+  configureWebpack: {
+    resolve: {
+      alias: {
+        components: path.join(__dirname, "src/components"),
+        router: path.join(__dirname, "src/router")
+      }
     }
   }
 };
