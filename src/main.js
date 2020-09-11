@@ -1,10 +1,13 @@
 import Vue from "vue";
+import VueCompositionApi from "@vue/composition-api";
 import { Message } from "element-ui";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import "./utils/axios";
 import "./plugins/element.js";
+
+Vue.use(VueCompositionApi);
 
 Vue.config.productionTip = false;
 Vue.config.performance = process.env.NODE_ENV !== "production";

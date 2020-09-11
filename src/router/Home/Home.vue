@@ -6,12 +6,18 @@
 </template>
 
 <script>
+import { onMounted } from "@vue/composition-api";
 import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
   name: "Home",
   components: {
     HelloWorld
+  },
+  setup() {
+    onMounted(() => {
+      console.info("onMounted");
+    });
   }
 };
 </script>
