@@ -1,5 +1,5 @@
 {
   "name": "home",
   "description": "home",
-  "main": "./Home.vue"
+  "main": "./Home.js"
 }
