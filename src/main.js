@@ -1,13 +1,21 @@
 import Vue from "vue";
 import VueCompositionApi from "@vue/composition-api";
 import { Message } from "element-ui";
+import VueApollo from "vue-apollo";
+import { apolloClient } from "core/apolloClient";
 import App from "./App";
 import router from "./router";
 import store from "./store";
 import "./utils/axios";
 import "./plugins/element.js";
 
+Vue.use(VueApollo);
+
 Vue.use(VueCompositionApi);
+
+const apolloProvider = new VueApollo({
+  defaultClient: apolloClient
+});
 
 Vue.config.productionTip = false;
 Vue.config.performance = process.env.NODE_ENV !== "production";
@@ -54,5 +62,6 @@ Vue.config.errorHandler = function(err) {
 new Vue({
   router,
   store,
+  apolloProvider,
   render: h => h(App)
 }).$mount("#app");

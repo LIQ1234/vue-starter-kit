@@ -27,8 +27,23 @@ module.exports = {
     resolve: {
       alias: {
         components: path.join(__dirname, "src/components"),
-        router: path.join(__dirname, "src/router")
+        router: path.join(__dirname, "src/router"),
+        core: path.join(__dirname, "src/core")
       }
     }
+  },
+  chainWebpack: config => {
+    config.module
+      .rule("vue")
+      .use("vue-loader")
+      .loader("vue-loader")
+      .tap(options => {
+        options.transpileOptions = {
+          transforms: {
+            dangerousTaggedTemplateString: true
+          }
+        };
+        return options;
+      });
   }
 };

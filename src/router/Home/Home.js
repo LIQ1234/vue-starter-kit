@@ -28,7 +28,7 @@ const Home = () => {
 
 Home.props = {
   test: {
-    type: String,
+    type: Number,
     descrpition: "",
     default: 111
   }
