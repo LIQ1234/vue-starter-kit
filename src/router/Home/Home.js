@@ -1,16 +1,25 @@
 import { reactive } from "@vue/composition-api";
+import ApolloQuery from "vue-apollo";
 import HelloWorld from "components/HelloWorld";
+import HELLO from "data/gql/hello.graphql";
 import styles from "./Home.module.scss";
 
-const Home = () => {
+const Home = (props, { root }) => {
   let data = reactive({
     test: 1
   });
 
-  const handleClick = () => {
-    console.info(data.test);
-  };
+  const handleClick = async () => {
+    // console.info(data.test);
+    console.info(root.$apollo.query);
 
+    const data = await root.$apollo.query({
+      query: HELLO,
+      fetchPolicy: "no-cache"
+    });
+    console.info(data);
+  };
+  console.info(root);
   return () => (
     <div>
       <ElInput vModel={data.test}></ElInput>

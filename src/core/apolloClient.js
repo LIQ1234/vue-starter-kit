@@ -5,7 +5,7 @@ import { InMemoryCache } from "apollo-cache-inmemory";
 // 与 API 的 HTTP 连接
 const httpLink = createHttpLink({
   // 你需要在这里使用绝对路径
-  uri: "http://localhost:3020/graphql"
+  uri: "http://localhost:4000/graphql"
 });
 
 // 缓存实现

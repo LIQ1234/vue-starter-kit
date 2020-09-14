@@ -28,7 +28,9 @@ module.exports = {
       alias: {
         components: path.join(__dirname, "src/components"),
         router: path.join(__dirname, "src/router"),
-        core: path.join(__dirname, "src/core")
+        core: path.join(__dirname, "src/core"),
+        data: path.join(__dirname, "src/data"),
+        config: path.join(__dirname, "src/config")
       }
     }
   },
