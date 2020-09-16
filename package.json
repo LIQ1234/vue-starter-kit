@@ -7,7 +7,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "start": "vue-cli-service serve",
-    "graphql": "nodemon --exec babel-node --presets env server/graphql.js"
+    "graphql": "cross-env NODE_ENV=development nodemon --exec babel-node --presets env server/graphql.js"
   },
   "dependencies": {
     "@vue/composition-api": "^1.0.0-beta.11",
@@ -16,6 +16,7 @@
     "apollo-cache-inmemory": "^1.6.6",
     "apollo-client": "^2.6.10",
     "apollo-link": "^1.2.14",
+    "apollo-link-error": "^1.1.13",
     "apollo-link-http": "^1.5.17",
     "axios": "^0.19.0",
     "babel-cli": "^6.26.0",
@@ -72,6 +73,7 @@
     "babel-plugin-transform-vue-jsx": "^3.7.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-vca-jsx": "^0.3.6",
+    "cross-env": "^7.0.2",
     "eslint": "^6.7.2",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-flowtype": "^5.2.0",

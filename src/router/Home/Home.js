@@ -10,8 +10,8 @@ const Home = (props, { root }) => {
 
   const handleClick = async () => {
     const { data } = await root.$apollo.query({
-      query: HELLO
-      // fetchPolicy: "no-cache"
+      query: HELLO,
+      fetchPolicy: "no-cache"
     });
     console.info(data);
   };

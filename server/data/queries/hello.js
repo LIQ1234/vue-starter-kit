@@ -4,13 +4,14 @@
 // import config from "config";
 import { GraphQLString as StringType } from "graphql";
 // import { post, get } from "../../utils/request";
-import config from "../../../src/config";
+import config from "../config";
 
 const hello = {
   name: "hello",
   description: "a hello world demo",
   type: StringType,
   resolve(parentValue, args, request) {
+    console.info(config);
     return "hello world!";
   }
 };
