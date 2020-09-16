@@ -6,8 +6,6 @@ import { GraphQLString as StringType } from "graphql";
 // import { post, get } from "../../utils/request";
 import config from "../../config";
 
-console.info("---", process.env);
-
 const hello = {
   name: "hello",
   description: "a hello world demo",

@@ -19,6 +19,7 @@
     "apollo-link-http": "^1.5.17",
     "axios": "^0.19.0",
     "babel-cli": "^6.26.0",
+    "babel-node": "^0.0.1-security",
     "connect-history-api-fallback": "^1.6.0",
     "core-js": "^3.6.5",
     "cors": "^2.8.5",

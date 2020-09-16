@@ -2,7 +2,7 @@
 module.exports = {
   client: {
     service: {
-      name: "111vue-starter-kit",
+      name: "vue-starter-kit",
       // GraphQL API 的 URL
       url: "http://localhost:4000/graphql"
     },

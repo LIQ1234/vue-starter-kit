@@ -1,5 +1,4 @@
 import { reactive } from "@vue/composition-api";
-import ApolloQuery from "vue-apollo";
 import HelloWorld from "components/HelloWorld";
 import HELLO from "data/gql/hello.graphql";
 import styles from "./Home.module.scss";
@@ -10,18 +9,28 @@ const Home = (props, { root }) => {
   });
 
   const handleClick = async () => {
-    // console.info(data.test);
-    console.info(root.$apollo.query);
-
-    const data = await root.$apollo.query({
-      query: HELLO,
-      fetchPolicy: "no-cache"
+    const { data } = await root.$apollo.query({
+      query: HELLO
+      // fetchPolicy: "no-cache"
     });
     console.info(data);
   };
-  console.info(root);
+
   return () => (
     <div>
+      <ApolloQuery query={HELLO}>
+        {data => {
+          const { isLoading, gqlError, result } = data;
+          console.info(data);
+          if (isLoading) return null;
+          if (gqlError) return gqlError;
+          const {
+            data: { hello }
+          } = result;
+
+          return <div>{hello}</div>;
+        }}
+      </ApolloQuery>
       <ElInput vModel={data.test}></ElInput>
       <ElButton onClick={handleClick} class={styles.home}>
         点击
