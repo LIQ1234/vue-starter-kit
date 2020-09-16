@@ -4,7 +4,7 @@
 // import config from "config";
 import { GraphQLString as StringType } from "graphql";
 // import { post, get } from "../../utils/request";
-import config from "../../config";
+import config from "../../../src/config";
 
 const hello = {
   name: "hello",

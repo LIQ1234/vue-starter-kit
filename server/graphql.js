@@ -1,4 +1,4 @@
-import schema from "../src/data/schema";
+import schema from "./data/schema";
 let express = require("express");
 let { graphqlHTTP } = require("express-graphql");
 let dotenv = require("dotenv");

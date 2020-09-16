@@ -29,7 +29,7 @@ module.exports = {
         components: path.join(__dirname, "src/components"),
         router: path.join(__dirname, "src/router"),
         core: path.join(__dirname, "src/core"),
-        data: path.join(__dirname, "src/data"),
+        gql: path.join(__dirname, "src/gql"),
         config: path.join(__dirname, "src/config")
       }
     }

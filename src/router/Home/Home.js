@@ -1,6 +1,6 @@
 import { reactive } from "@vue/composition-api";
 import HelloWorld from "components/HelloWorld";
-import HELLO from "data/gql/hello.graphql";
+import HELLO from "gql/hello.graphql";
 import styles from "./Home.module.scss";
 
 const Home = (props, { root }) => {
@@ -21,7 +21,6 @@ const Home = (props, { root }) => {
       <ApolloQuery query={HELLO}>
         {data => {
           const { isLoading, gqlError, result } = data;
-          console.info(data);
           if (isLoading) return null;
           if (gqlError) return gqlError;
           const {
