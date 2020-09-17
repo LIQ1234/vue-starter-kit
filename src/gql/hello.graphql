@@ -1,3 +1,11 @@
-query hello{
-    hello
+query hello {
+  hello {
+    page
+    total
+    total_page
+    list {
+      id
+      audit_status
+    }
+  }
 }
