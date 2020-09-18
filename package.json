@@ -16,6 +16,7 @@
     "@babel/plugin-transform-runtime": "^7.11.5",
     "@babel/polyfill": "^7.11.5",
     "@vue/composition-api": "^1.0.0-beta.11",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "accounting": "^0.4.1",
     "apollo-boost": "^0.4.9",
     "apollo-cache-inmemory": "^1.6.6",
@@ -66,6 +67,7 @@
     "vue-i18n": "^8.13.0",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0",
+    "babel-preset-env": "^1.7.0",
     "vuex-persistedstate": "^2.5.4"
   },
   "devDependencies": {
@@ -83,10 +85,8 @@
     "babel-loader": "^8.1.0",
     "babel-plugin-jsx-v-model": "^2.0.3",
     "babel-plugin-syntax-jsx": "^6.18.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-plugin-transform-vue-jsx": "^3.7.0",
-    "babel-preset-env": "^1.7.0",
     "babel-preset-vca-jsx": "^0.3.6",
     "cross-env": "^7.0.2",
     "eslint": "^6.7.2",
@@ -101,17 +101,11 @@
     "node-sass": "^4.9.2",
     "nodemon": "^2.0.4",
     "prettier": "^1.19.1",
-    "rollup": "^2.27.1",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-polyfills": "^0.2.1",
-    "rollup-plugin-node-resolve": "^5.2.0",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
     "vue-cli-plugin-apollo": "^0.22.2",
     "vue-cli-plugin-element": "~1.0.1",
-    "vue-template-compiler": "^2.6.11",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12"
+    "vue-template-compiler": "^2.6.11"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
