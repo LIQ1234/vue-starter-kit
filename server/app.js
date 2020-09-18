@@ -22,9 +22,6 @@ function setCustomCacheControl(res, path) {
   }
 }
 
-const a = { a: 1, b: 2 };
-// console.info({ ...a });
-
 app.get("/config.js", (req, res) => {
   res.set("Content-type", "text/javascript");
   res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");

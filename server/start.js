@@ -1,5 +1,7 @@
+require("babel-polyfill");
 require("babel-register")({
-  presets: ["env"]
+  presets: ["env"],
+  plugins: ["transform-object-rest-spread"]
 });
 
 module.exports = require("./graphql.js");
