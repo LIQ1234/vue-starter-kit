@@ -1,5 +1,11 @@
-query hello {
-  hello {
+query hello (
+  $page: Int
+  $currentSize: Int
+) {
+  hello (
+    page: $page
+    currentSize: $currentSize
+  ){
     page
     total
     total_page

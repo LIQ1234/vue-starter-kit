@@ -16,7 +16,7 @@ const httpLink = createHttpLink({
 const middlewareLink = new ApolloLink((operation, forward) => {
   operation.setContext({
     headers: {
-      "Account-Token": "680f974dc49e2a527aa73d079950f748" || null
+      "Account-Token": "4388c944d9f2001fda56f02d1d1e9990" || null
     }
   }); //request拦截器
 

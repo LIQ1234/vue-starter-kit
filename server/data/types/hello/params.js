@@ -1,19 +1,18 @@
-import {
-  GraphQLObjectType as ObjectType,
-  GraphQLInt as IntType
-} from "graphql";
+import { GraphQLInt as IntType } from "graphql";
 
-export default new ObjectType({
+export default {
   name: "HelloParamsType",
   description: "hello params type",
   fields: {
     page: {
       type: IntType,
-      description: "页码"
+      description: "页码",
+      defaultValue: 1
     },
     currentSize: {
       type: IntType,
-      description: "每页个数"
+      description: "每页个数",
+      defaultValue: 20
     }
   }
-});
+};

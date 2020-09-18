@@ -5,7 +5,9 @@ import styles from "./Home.module.scss";
 
 const Home = (props, { root }) => {
   let data = reactive({
-    test: 1
+    test: 1,
+    page: 1,
+    currentSize: 20
   });
 
   const handleClick = async () => {
@@ -13,23 +15,42 @@ const Home = (props, { root }) => {
       query: HELLO,
       fetchPolicy: "no-cache"
     });
-    console.info(data);
   };
 
   return () => (
     <div>
-      <ApolloQuery query={HELLO}>
-        {data => {
-          const { isLoading, gqlError, result } = data;
+      <ApolloQuery
+        query={HELLO}
+        variables={{
+          page: data.page,
+          currentSize: data.pageSize
+        }}
+      >
+        {({ isLoading, gqlError, result, query: { fetchMore, refetch } }) => {
           if (isLoading) return null;
           if (gqlError) return gqlError;
+
           const {
             data: { hello }
           } = result;
 
-          return <div>{hello}</div>;
+          return (
+            <div>
+              {hello.page}
+              <ElButton
+                onClick={() => {
+                  // data.page = 2;
+                  refetch();
+                }}
+                class={styles.home}
+              >
+                重载
+              </ElButton>
+            </div>
+          );
         }}
       </ApolloQuery>
+
       <ElInput vModel={data.test}></ElInput>
       <ElButton onClick={handleClick} class={styles.home}>
         点击
